@@ -1,0 +1,7 @@
+{
+  "stryker-config": {
+    "project": "src/CSharpMauiMonolith.csproj",
+    "test-projects": ["tests/CSharpMauiMonolith.Tests.csproj"],
+    "output-path": "quality/reports/stryker"
+  }
+}

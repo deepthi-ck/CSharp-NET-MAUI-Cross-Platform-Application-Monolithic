@@ -1,0 +1,4 @@
+﻿C# .NET MAUI Cross-Platform Application - Scenario 1 Monolithic
+USER -> AppShell/MainPage/AppDashboardPage -> ViewModel (ObservableCollection + async)
+-> AppService -> AppManager -> PartitionRouter -> InMemoryStore (Dictionary/LINQ/DateTime)
+Platforms/ are minimal stubs. Not a clone of dotnet/maui. Not gRPC. Not Blazor.
