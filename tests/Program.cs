@@ -15,6 +15,7 @@ namespace MauiMonolith.Tests
             failures += Run("AppServiceTest", AppServiceTest.Run);
             failures += Run("CsharpBuiltinUsageTest", CsharpBuiltinUsageTest.Run);
             failures += Run("AppDashboardViewModelTest", AppDashboardViewModelTest.Run);
+            failures += Run("UiNavigationTest", UiNavigationTest.Run);
             Console.WriteLine(failures == 0 ? "ALL TESTS PASS" : "TESTS FAILED: " + failures);
             return failures == 0 ? 0 : 1;
         }

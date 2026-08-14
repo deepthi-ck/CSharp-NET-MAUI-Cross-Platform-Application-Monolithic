@@ -18,5 +18,10 @@ namespace MauiMonolith
         {
             return new AppResponse { Status = "NOT_FOUND", Key = key, Found = false, Message = "not found" };
         }
+
+        public static AppResponse Error(string message)
+        {
+            return new AppResponse { Status = "ERROR", Found = false, Message = message ?? string.Empty };
+        }
     }
 }
