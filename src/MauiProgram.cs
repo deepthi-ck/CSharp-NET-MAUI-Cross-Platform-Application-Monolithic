@@ -11,6 +11,13 @@ namespace MauiMonolith
             BuildContext build = BuildContext.FromAssembly();
             build.ValidateMonolithSameVersion();
             AppConfiguration configuration = LoadConfiguration();
+            int portOverride;
+            string portEnv = Environment.GetEnvironmentVariable("APP_PORT");
+            if (!string.IsNullOrWhiteSpace(portEnv) && int.TryParse(portEnv, out portOverride))
+            {
+                configuration.Port = portOverride;
+            }
+
             AppManager manager = new AppManager(configuration);
             AppService service = new AppService(manager);
             service.LoadSampleData(FindFile("data", "sample-app-data.json"));
@@ -19,7 +26,7 @@ namespace MauiMonolith
             App app = new App(shell);
             MainPage mainPage = new MainPage(viewModel);
             app.MainPage = mainPage;
-            return new HeadlessMauiApp(build, service, viewModel, shell, app, mainPage);
+            return new HeadlessMauiApp(build, configuration, service, viewModel, shell, app, mainPage);
         }
 
         private static AppConfiguration LoadConfiguration()
@@ -59,6 +66,7 @@ namespace MauiMonolith
     {
         public HeadlessMauiApp(
             BuildContext build,
+            AppConfiguration configuration,
             AppService service,
             AppDashboardViewModel viewModel,
             AppShell shell,
@@ -66,6 +74,7 @@ namespace MauiMonolith
             MainPage mainPage)
         {
             Build = build;
+            Configuration = configuration;
             Service = service;
             ViewModel = viewModel;
             Shell = shell;
@@ -74,6 +83,7 @@ namespace MauiMonolith
         }
 
         public BuildContext Build { get; private set; }
+        public AppConfiguration Configuration { get; private set; }
         public AppService Service { get; private set; }
         public AppDashboardViewModel ViewModel { get; private set; }
         public AppShell Shell { get; private set; }
