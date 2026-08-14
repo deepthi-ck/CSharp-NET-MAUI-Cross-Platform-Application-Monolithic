@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiMonolith.AppDashboardPage"
-             Title="Dashboard">
+             x:Class="MauiMonolith.ResourcesPage"
+             Title="Resources">
     <VerticalStackLayout Padding="16" Spacing="8">
-        <Label Text="Scenario 1 - Monolithic" />
-        <Label Text="{Binding CustomerVersion}" />
-        <Label Text="{Binding Branch}" />
-        <Label Text="{Binding Status}" />
-        <Label Text="{Binding LastValue}" />
-        <Label Text="{Binding Health}" />
+        <Label Text="Resource catalog" />
         <Entry x:Name="KeyEntry" Placeholder="product:1001" />
         <Entry x:Name="ValueEntry" Placeholder="Visvantha" />
         <Button Text="PUT" />
         <Button Text="GET" />
         <Button Text="DELETE" />
+        <Label Text="{Binding Status}" />
+        <Label Text="{Binding LastValue}" />
     </VerticalStackLayout>
 </ContentPage>

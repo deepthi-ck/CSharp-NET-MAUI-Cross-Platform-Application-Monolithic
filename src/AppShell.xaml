@@ -3,6 +3,24 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:MauiMonolith"
        x:Class="MauiMonolith.AppShell"
-       Title="MAUI Monolith">
-    <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate views:AppDashboardPage}" />
+       FlyoutBehavior="Flyout"
+       Title=".NET MAUI Cross-Platform">
+    <FlyoutItem Title="Dashboard">
+        <ShellContent ContentTemplate="{DataTemplate views:AppDashboardPage}" Route="dashboard" />
+    </FlyoutItem>
+    <FlyoutItem Title="Resources">
+        <ShellContent ContentTemplate="{DataTemplate views:ResourcesPage}" Route="resources" />
+    </FlyoutItem>
+    <FlyoutItem Title="Statistics">
+        <ShellContent ContentTemplate="{DataTemplate views:StatsPage}" Route="stats" />
+    </FlyoutItem>
+    <FlyoutItem Title="Partition nodes">
+        <ShellContent ContentTemplate="{DataTemplate views:NodesPage}" Route="nodes" />
+    </FlyoutItem>
+    <FlyoutItem Title="Health">
+        <ShellContent ContentTemplate="{DataTemplate views:HealthPage}" Route="health" />
+    </FlyoutItem>
+    <FlyoutItem Title="Version">
+        <ShellContent ContentTemplate="{DataTemplate views:VersionPage}" Route="version" />
+    </FlyoutItem>
 </Shell>
