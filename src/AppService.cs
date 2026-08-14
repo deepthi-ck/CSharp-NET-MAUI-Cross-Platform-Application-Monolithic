@@ -58,6 +58,28 @@ namespace MauiMonolith
             return Task.FromResult(_manager.Health());
         }
 
+        public Task<object> ListResourcesAsync(CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            return Task.FromResult((object)_manager.ListResources());
+        }
+
+        public Task<object> ListNodesAsync(CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            return Task.FromResult((object)_manager.ListNodes());
+        }
+
+        public VersionInfo GetVersion(BuildContext build)
+        {
+            if (build == null)
+            {
+                throw new ArgumentNullException("build");
+            }
+
+            return build.ToVersionInfo();
+        }
+
         public void LoadSampleData(string path)
         {
             if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))

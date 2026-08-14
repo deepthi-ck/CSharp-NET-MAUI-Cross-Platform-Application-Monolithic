@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 
 namespace MauiMonolith
 {
-    public partial class AppDashboardPage
+    public partial class ResourcesPage
     {
-        public AppDashboardPage(AppDashboardViewModel viewModel)
+        public ResourcesPage(AppDashboardViewModel viewModel)
         {
             BindingContext = viewModel;
             ViewModel = viewModel;
-            Title = "Dashboard";
+            Title = "Resources";
         }
 
         public string Title { get; set; }
