@@ -23,6 +23,19 @@ C# BCL built-ins (`Dictionary` / `ConcurrentDictionary` / `ObservableCollection`
 
 ```bash
 python build.py
+dotnet run --project src/CSharpMauiMonolith.csproj
+```
+
+Operator UI (page-to-page, also mirrors AppShell flyout routes):
+
+- `http://127.0.0.1:5082/` Dashboard
+- `/resources.html` Resource PUT/GET/DELETE (`product:1001` / `Visvantha`)
+- `/stats.html` Statistics
+- `/nodes.html` Partition nodes
+- `/health.html` Health
+- `/version.html` Customer version
+
+```bash
 dotnet run --project src/CSharpMauiMonolith.csproj -- --self-test
 ```
 
